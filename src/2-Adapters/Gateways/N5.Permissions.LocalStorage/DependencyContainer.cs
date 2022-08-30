@@ -5,7 +5,6 @@
         public static IServiceCollection AddRepositories(this IServiceCollection services,
             IConfiguration configuration)
         {
-
             services.AddDbContext<PermissionContext>(options =>
                 options.UseSqlServer(configuration["N5:SqlConnetionString"]));
 

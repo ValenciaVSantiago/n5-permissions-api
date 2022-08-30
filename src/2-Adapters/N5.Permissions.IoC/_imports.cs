@@ -1,4 +1,6 @@
-﻿global using N5.Permissions.Controllers;
+﻿global using N5.Permissions.BusinessObjects.Interfaces.Tools;
+global using N5.Permissions.Tools;
+global using N5.Permissions.Controllers;
 global using N5.Permissions.LocalStorage;
 global using N5.Permissions.Presenters;
 global using N5.Permissions.UserCases;

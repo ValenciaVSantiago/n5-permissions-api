@@ -33,6 +33,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repositories", "Repositorie
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "N5.Permissions.SQLServer", "src\2-Adapters\Gateways\N5.Permissions.LocalStorage\N5.Permissions.SQLServer.csproj", "{61B850A4-D020-451D-A8C4-4CC8C7417575}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "N5.Permissions.Tools", "src\1-Domain\N5.Permissions.Tools\N5.Permissions.Tools.csproj", "{B53F76FB-84DA-4F31-BF68-793CC95D8CA5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{61B850A4-D020-451D-A8C4-4CC8C7417575}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61B850A4-D020-451D-A8C4-4CC8C7417575}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61B850A4-D020-451D-A8C4-4CC8C7417575}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B53F76FB-84DA-4F31-BF68-793CC95D8CA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B53F76FB-84DA-4F31-BF68-793CC95D8CA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B53F76FB-84DA-4F31-BF68-793CC95D8CA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B53F76FB-84DA-4F31-BF68-793CC95D8CA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,6 +92,7 @@ Global
 		{AA9705C5-88AA-45F5-AC12-424E66BC39A5} = {7589AE31-3717-412B-92E7-1C3D2CB22D57}
 		{BFFE8785-4313-4648-B441-4062210DF234} = {FE2DF491-11C1-482A-825E-E31221CC16C1}
 		{61B850A4-D020-451D-A8C4-4CC8C7417575} = {BFFE8785-4313-4648-B441-4062210DF234}
+		{B53F76FB-84DA-4F31-BF68-793CC95D8CA5} = {D8099586-C5A6-4AAF-B6A5-43B1FC5D0938}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {66C47E56-BC65-478C-9552-591876AD8DBD}

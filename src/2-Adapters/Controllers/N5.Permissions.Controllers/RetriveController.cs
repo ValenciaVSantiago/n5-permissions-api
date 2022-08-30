@@ -12,9 +12,9 @@
             Presenter = presenter;
         }
 
-        public async ValueTask<PermissionDTO> Retrive(int retrive)
+        public async ValueTask<PermissionDTO> Retrive(int id)
         {
-            await Interactor.Handle();
+            await Interactor.Handle(id);
             return Presenter.PermissionInfo;
         }
     }

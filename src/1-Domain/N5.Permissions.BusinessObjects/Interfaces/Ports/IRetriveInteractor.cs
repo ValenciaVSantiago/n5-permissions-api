@@ -2,6 +2,6 @@
 {
     public interface IRetriveInteractor
     {
-        ValueTask Handle();
+        ValueTask Handle(int id);
     }
 }

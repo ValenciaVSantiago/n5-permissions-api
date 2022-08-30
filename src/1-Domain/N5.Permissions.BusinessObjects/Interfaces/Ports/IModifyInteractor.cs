@@ -2,6 +2,6 @@
 {
     public interface IModifyInteractor
     {
-        ValueTask Handle();
+        ValueTask Handle(ModifyPermissionDTO permission);
     }
 }

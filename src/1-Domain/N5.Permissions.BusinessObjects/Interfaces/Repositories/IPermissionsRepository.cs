@@ -2,6 +2,8 @@
 {
     public interface IPermissionsRepository
     {
-        ValueTask GetById();
+        ValueTask<Permission> GetPermissionsById(int id);
+        ValueTask AddPermissions(Permission permission);
+        ValueTask ModifyPermissions(Permission permission);
     }
 }

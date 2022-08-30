@@ -11,7 +11,7 @@
 
         public async ValueTask Request(RequestPermissionDTO request)
         {
-            await Interactor.Handle();
+            await Interactor.Handle(request);
         }
     }
 }

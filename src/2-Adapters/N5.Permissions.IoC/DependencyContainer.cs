@@ -4,11 +4,12 @@
     {
         public static IServiceCollection AddPermissionsServices(this IServiceCollection services,
             IConfiguration configuration)
-        {
+        {          
             services.AddUseCases()
             .AddControllers()
             .AddRepositories(configuration)
-            .AddPresenters();
+            .AddElasticsearch(configuration)
+            .AddPresenters();          
 
             return services;
         }

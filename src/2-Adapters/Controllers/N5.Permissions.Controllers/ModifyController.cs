@@ -11,7 +11,7 @@
 
         public async ValueTask Modify(ModifyPermissionDTO modify)
         {
-            await Interactor.Handle();
+            await Interactor.Handle(modify);
         }
     }
 }

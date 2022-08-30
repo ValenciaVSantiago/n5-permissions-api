@@ -2,9 +2,28 @@
 {
     internal class RequestInteractor : IRequestInteractor
     {
-        public ValueTask Handle()
+        private readonly IPermissionsRepository RepositoryService;
+        private readonly IElasticSearchService ElasticClient;
+
+        public RequestInteractor(IPermissionsRepository repositoryService,
+            IElasticSearchService elasticClient)
         {
-            throw new NotImplementedException();
+            RepositoryService = repositoryService;
+            ElasticClient = elasticClient;
+        }
+
+        public async ValueTask Handle(RequestPermissionDTO permissionDTO)
+        {
+            var permission = new Permission()
+            {
+                EmployeeForename = permissionDTO.EmployeeForename,
+                EmployeeSurname = permissionDTO.EmployeeSurname,
+                PermissionTypeId = permissionDTO.PermissionTypeId,
+                PermissionDate = DateTime.Now
+            };
+
+            await RepositoryService.AddPermissions(permission);
+            await ElasticClient.Request(permission);
         }
     }
 }

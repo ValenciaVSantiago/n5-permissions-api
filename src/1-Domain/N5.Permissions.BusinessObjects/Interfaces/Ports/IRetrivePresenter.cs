@@ -3,6 +3,6 @@
     public interface IRetrivePresenter
     {
         PermissionDTO PermissionInfo { get; }
-        ValueTask Handle();
+        ValueTask Handle(Permission permission);
     }
 }

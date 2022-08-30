@@ -8,6 +8,11 @@
         public PermissionContext(DbContextOptions<PermissionContext> options)
             : base(options) { }
 
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer("Server=localhost,1433;Initial Catalog=n5-employees;Persist Security Info=True;User Id=Sa;Password=12345Abc%;MultipleActiveResultSets=True;Connection Timeout=30;");
+        //}
+
         public DbSet<Permission> Permissions { get; set; }
         public DbSet<PermissionType> PermissionTypes { get; set; }
 

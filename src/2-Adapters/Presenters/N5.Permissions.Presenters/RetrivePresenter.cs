@@ -1,17 +1,18 @@
-﻿using N5.Permissions.BusinessObjects.DTOs;
-using N5.Permissions.BusinessObjects.Interfaces.Ports;
-
-namespace N5.Permissions.Presenters
+﻿namespace N5.Permissions.Presenters
 {
     public class RetrivePresenter : IRetrivePresenter
     {
         public PermissionDTO PermissionInfo { get; private set; }
 
-        public ValueTask Handle()
+        public ValueTask Handle(Permission permission)
         {
             PermissionInfo = new PermissionDTO
             {
-
+                Id = permission.Id,
+                EmployeeForename = permission.EmployeeForename,
+                EmployeeSurname = permission.EmployeeSurname,
+                PermissionTypeId = permission.PermissionTypeId,
+                PermissionDate = permission.PermissionDate
             };
 
             return ValueTask.CompletedTask;

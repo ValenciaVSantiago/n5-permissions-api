@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\1-Domain\N5.Permissions.Tools\N5.Permissions.Tools.csproj" />
     <ProjectReference Include="..\..\1-Domain\N5.Permissions.UserCases\N5.Permissions.UserCases.csproj" />
     <ProjectReference Include="..\Controllers\N5.Permissions.Controllers\N5.Permissions.Controllers.csproj" />
     <ProjectReference Include="..\Gateways\N5.Permissions.LocalStorage\N5.Permissions.SQLServer.csproj" />

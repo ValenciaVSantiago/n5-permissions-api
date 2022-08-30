@@ -2,6 +2,6 @@
 {
     public interface IRequestInteractor
     {
-        ValueTask Handle();
+        ValueTask Handle(RequestPermissionDTO permission);
     }
 }
