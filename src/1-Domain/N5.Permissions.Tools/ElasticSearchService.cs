@@ -3,17 +3,36 @@
     public class ElasticSearchService : IElasticSearchService
     {
         private IElasticClient ElasticClient;
+        private IConfiguration Configuration;
 
-        public ElasticSearchService(IElasticClient elasticClient)
+        public ElasticSearchService(IElasticClient elasticClient, 
+            IConfiguration configuration)
         {
             ElasticClient = elasticClient;
+            Configuration = configuration;
         }
 
         public async ValueTask Request(Permission permission)
         {
             try
             {
-                await ElasticClient.IndexDocumentAsync(permission);
+                var defaultIndex = Configuration["elasticsearch:index"];
+                var indexExists = await ElasticClient.Indices.ExistsAsync(defaultIndex);
+                if (!indexExists.Exists)
+                {
+                    var response = await ElasticClient.Indices.CreateAsync(defaultIndex,
+                       index => index.Map<Permission>(
+                           x => x.AutoMap()
+                       ));
+                }
+
+                var searchResponse = await ElasticClient.IndexDocumentAsync(permission);
+                if (!searchResponse.IsValid)
+                {
+                    // Handle errors
+                    var debugInfo = searchResponse.DebugInformation;
+                    var error = searchResponse.ServerError.Error;
+                }
             }
             catch (Exception ex)
             {
